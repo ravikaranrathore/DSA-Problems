@@ -8,16 +8,26 @@ public class q5_exam {
         int i, j;
         int[] avg = new int[3];
 
-        for (i = 0; i < 3; i++) {
-            int temp = 0;
-            for (j = 0; j < 3; j++) {
+        for (j = 0; j < 3; j++) {
+            System.out.println("Round " + (j+1) + ":");
+
+            for (i = 0; i < 3; i++) {
+                System.out.print("Oxygen level of trainee " + (i+1) + " is - ");
                 oxygen[i][j] = sc.nextInt();
+
                 if (oxygen[i][j] > 100 ||oxygen[i][j] < 1) {
                     System.out.println("Oxygen level should be in range 1 to 100. RUN AGAIN !!!!");
                     System.exit(404);
                 }
-                temp += oxygen[i][j];
             }
+        }
+
+        for(i=0;i<3;i++){
+            int temp = 0;
+
+            for(j=0;j<3;j++)
+                temp += oxygen[i][j];
+
             temp /= 3;
             avg[i] = temp;
         }
